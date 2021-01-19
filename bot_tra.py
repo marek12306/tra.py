@@ -15,10 +15,7 @@ class Trapy(discord.Client):
         s = message.content.strip()
         if 'trapy' in s or 'tra.py' in s:
             r = requests.get('https://cure.ninja/booru/api/json?q={}+trap&f={}&o=r&s=1'.format(random.choice(trapy), 'e' if message.channel.is_nsfw() else 's'))
-            url = r.json()['results'][0]['url']
-            image = io.BytesIO(requests.get(url).content)
-            imgformat = imghdr.what(image)
-            await message.reply(file=discord.File(image, filename=f'trap.{imgformat}'))
+            await message.reply(content=r.json()['results'][0]['url'])
 
 client = Trapy()
 
