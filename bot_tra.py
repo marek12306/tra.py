@@ -5,7 +5,7 @@ import random
 import imghdr
 import io
 
-trapy = ['astolfo_(fate)','astolfo','felix_argyle']
+trapy = ['astolfo_(fate)','astolfo','felix_argyle','tsukudani_norio','arikawa_hime']
 
 class Trapy(discord.Client):
     async def on_ready(self):
